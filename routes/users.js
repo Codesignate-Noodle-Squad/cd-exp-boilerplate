@@ -1,7 +1,7 @@
-const express = require('express');
-let Users = require('../models/users/collection');
-let User = require('../models/users/model');
-let router = express.Router();
+var express = require('express');
+var Users = require('../models/users/collection');
+var User = require('../models/users/model');
+var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -50,7 +50,7 @@ router.get('/:id', function (req, res, next) {
 /* CREATE user */
 router.post('/', function (req, res, next) {
     User.forge({
-        first_name: req.body.firstname,
+        first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
         gender: req.body.gender
@@ -131,4 +131,4 @@ router.delete('/:id', function (req, res, next) {
     });
 });
 
-export default router;
+module.exports = router;
